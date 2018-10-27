@@ -2,6 +2,9 @@ import cv2
 import matplotlib.pyplot as plt
 import os
 
+def resizeImage(image , height , width):
+    return cv2.resize(image,(height , width))
+
 def displayImage(image):
     cv2.imshow('image' , image)
     cv2.waitKey(0)
