@@ -16,6 +16,8 @@ Right now we're able to take in live video feed and predict the number from its 
     * 3-groups: (each) 1 Conv2D Layer, MaxPooling Layer and Dropout 
     * Flatten Layer
     * 2 groups: 1 Fully Connected Layer, Dropout
+* Dataset
+    * Prime Source: Kaggle
     
 ### How to run the application
 ------------------------------------------------------------------------------
