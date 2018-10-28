@@ -20,7 +20,7 @@ Right now we're able to take in live video feed and predict the number from its 
     * Prime Source: Kaggle
     
 ### How does it work ?
-------------------------------------------------------------------------------
+------------------------------------------------------------------------------to run the application
 * Setting up the environment and downloading all dependencies:
 ```
 $ conda create --name <envname> --file requirements.txt
@@ -37,3 +37,6 @@ $ conda create --name <envname> --file requirements.txt
 * We can also add this as a plugin to softwares like Skype so that mute people can easily use it to communicate and express their thoughts to other non-ASL speaking people.
 * Add this to any video streaming service as a (in crude terms)subtitle for ASL Speakers would be ideal.
 ------------------------------------------------------------------------------
+### Copyright Information
+-------------------------------------------------------------------------------
+[License][https://github.com/hackabit18/BlundersPride/blob/master/LICENSE]
