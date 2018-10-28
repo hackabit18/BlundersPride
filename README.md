@@ -20,7 +20,7 @@ Right now we're able to take in live video feed and predict the number from its 
     * Prime Source: Kaggle
     
 ### How does it work ?
-------------------------------------------------------------------------------to run the application
+------------------------------------------------------------------------------
 * Setting up the environment and downloading all dependencies:
 ```
 $ conda create --name <envname> --file requirements.txt
