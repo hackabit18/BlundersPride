@@ -17,7 +17,7 @@ NO_OF_CLASSES = 10
 IMAGE_HEIGHT = 100
 IMAGE_WIDTH = 100
 BATCH_SIZE = 30
-DATASET_PATH = '../Sign-Language-Digits-Dataset/GrayScaleDataset/'
+DATASET_PATH = '../Sign-Language-Digits-Dataset/CannyEdgeDataset/'
 EPOCHS = 30
 
 def createClassifier():
@@ -34,12 +34,13 @@ def createClassifier():
     #classifier.add(Conv2D(32 , (5,5) , input_shape = (IMAGE_HEIGHT , IMAGE_WIDTH , 3) , activation = 'relu'))
     classifier.add(MaxPooling2D(pool_size=(5 ,5) , strides=(5,5), padding='same'))
     #classifier.add(Dropout(0.25))
-
+    #classifier.add(Dropout(0.25))
+    
     classifier.add(Conv2D(64 , (5,5) , input_shape = (IMAGE_HEIGHT , IMAGE_WIDTH , 3) , activation = 'relu'))
     #classifier.add(Conv2D(16 , (2,2) , input_shape = (IMAGE_HEIGHT , IMAGE_WIDTH , 3) , activation = 'relu'))
     classifier.add(MaxPooling2D(pool_size=(5 , 5) , strides=(5,5), padding='same'))
     #classifier.add(Dropout(0.25))
-
+    
 #    classifier.add(Conv2D(32 , (1,1) , input_shape = (IMAGE_HEIGHT , IMAGE_WIDTH , 3) , activation = 'relu'))
 #    #classifier.add(Conv2D(64 , (5,5) , input_shape = (IMAGE_HEIGHT , IMAGE_WIDTH , 3) , activation = 'relu'))
 #    classifier.add(MaxPooling2D(pool_size=(2 , 2) , strides=2, padding='same'))
@@ -47,17 +48,17 @@ def createClassifier():
 #    classifier.add(Conv2D(64 , (5,5) , input_shape = (IMAGE_HEIGHT , IMAGE_WIDTH , 3) , activation = 'relu'))
 #    #classifier.add(Conv2D(64 , (5,5) , input_shape = (IMAGE_HEIGHT , IMAGE_WIDTH , 3) , activation = 'relu'))
 #    classifier.add(MaxPooling2D(pool_size=(2 , 2) , strides=2, padding='same'))
-#    
+    classifier.add(Dropout(0.25))
 
     classifier.add(Flatten())
     
-    classifier.add(Dropout(0.25))
+    
     
     classifier.add(Dense(units=128 , activation = 'relu'))
     classifier.add(Dropout(0.2))
 
-    classifier.add(Dense(units=128 , activation = 'relu'))
-    classifier.add(Dropout(0.2))
+    #classifier.add(Dense(units=128 , activation = 'relu'))
+    #classifier.add(Dropout(0.2))
 
     classifier.add(Dense(units=NO_OF_CLASSES , activation='softmax'))
 

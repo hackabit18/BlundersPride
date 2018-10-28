@@ -8,6 +8,17 @@ import copy
 import cv2
 import ImagePreprocessing
 
+#CONSTANTS
+NO_OF_CLASSES = 10
+IMAGE_HEIGHT = 100
+IMAGE_WIDTH = 100
+BATCH_SIZE = 30
+DATASET_PATH = '../Sign-Language-Digits-Dataset/CannyEdgeDataset/'
+EPOCHS = 30
+
+import keras
+classifier= keras.models.load_model('working-1.model')
+
 def predict(image_data):
     x = classifier.predict(image_data)
     x = x[0]
@@ -33,16 +44,10 @@ while True:
     img = cv2.flip(img, 1)
     
     if ret:
-        x1, y1, x2, y2 = 100, 100, 200, 200
+        x1, y1, x2, y2 = 300, 100, 400, 200
         img_c = img[y1:y2, x1:x2]
-        #img = cv2.imread('./saved/test.jpg')
-        #img_c = ImagePreprocessing.convertToCannyEdge(img_c)
-        #cv2.imwrite('./LiveImages/image{}.jpg'.format(img_number) , img_c)
-        #img_c = cv2.imread('./LiveImages/image{}.jpg'.format(img_number))
-        img_c = cv2.resize(img_c,(IMAGE_HEIGHT , IMAGE_WIDTH))
-        img_c = img_c.reshape(1 , IMAGE_HEIGHT , IMAGE_WIDTH , 3)
+
         
-        img_number+= 1
         #img_g = convertToGreyScale(img_c)
         c += 1
 #        image_data = cv2.imencode('.jpg', img_cropped)[1].tostring()
@@ -52,6 +57,14 @@ while True:
         
         if i%4 == 0:
 #            cv2.imwrite('saved/{i}test.jpg',img_c)
+            cv2.imwrite('./LiveImages/image{}.jpg'.format(img_number) , img_c)
+            img_c = cv2.imread('./LiveImages/image{}.jpg'.format(img_number) , 0)
+            cv2.imwrite('./LiveImages/image-gray{}.jpg'.format(img_number) , img_c)
+            img_c = cv2.imread('./LiveImages/image-gray{}.jpg'.format(img_number))
+            img_c = cv2.resize(img_c,(IMAGE_HEIGHT , IMAGE_WIDTH))
+            img_c = img_c.reshape(1 , IMAGE_HEIGHT , IMAGE_WIDTH , 3)
+            
+            img_number+= 1
             res_tmp, score = predict(img_c)
             res = res_tmp
             
@@ -75,7 +88,7 @@ while True:
         cv2.imshow("img", img)
         img_sequence = np.zeros((200,1200,3), np.uint8)
         cv2.putText(img_sequence, '%s' % (sequence.upper()), (30,30), cv2.FONT_HERSHEY_SIMPLEX, 1, (255,255,255), 2)
-        cv2.imshow('sequence', img_sequence)
+        #cv2.imshow('sequence', img_sequence)
         
         if a == 27: # when `esc` is pressed
             break
