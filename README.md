@@ -39,4 +39,4 @@ $ conda create --name <envname> --file requirements.txt
 ------------------------------------------------------------------------------
 ### Copyright Information
 -------------------------------------------------------------------------------
-[License][https://github.com/hackabit18/BlundersPride/blob/master/LICENSE]
+[License](https://github.com/hackabit18/BlundersPride/blob/master/LICENSE)
