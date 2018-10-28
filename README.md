@@ -25,7 +25,7 @@ Right now we're able to take in live video feed and predict the number from its 
 ```
 $ conda create --name <envname> --file requirements.txt
 ```
-* After this simply run LiveVideoFeed.py using python.
+* After this simply run NewLiveVideoFeed.py using python.
 * Place your hand in the blue box to get the predictions.
 * Currently the sequence of prediction is shown in another window. 
 * The video frame just shows the current prediction.
