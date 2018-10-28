@@ -19,7 +19,7 @@ Right now we're able to take in live video feed and predict the number from its 
 * Dataset
     * Prime Source: Kaggle
     
-### How to run the application
+### How does it work ?
 ------------------------------------------------------------------------------
 * Setting up the environment and downloading all dependencies:
 ```
