@@ -37,6 +37,9 @@ $ conda create --name <envname> --file requirements.txt
 * We can also add this as a plugin to softwares like Skype so that mute people can easily use it to communicate and express their thoughts to other non-ASL speaking people.
 * Add this to any video streaming service as a (in crude terms)subtitle for ASL Speakers would be ideal.
 ------------------------------------------------------------------------------
+### ScreenShot
+-------------------------------------------------------------------------------
+![Three](/Screenshot.png)
 ### Copyright Information
 -------------------------------------------------------------------------------
 [License](https://github.com/hackabit18/BlundersPride/blob/master/LICENSE)
