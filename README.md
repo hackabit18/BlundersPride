@@ -29,7 +29,7 @@ $ conda create --name <envname> --file requirements.txt
 * Place your hand in the blue box to get the predictions.
 * Currently the sequence of prediction is shown in another window. 
 * The video frame just shows the current prediction.
-* Deployment soon (in a few weeks). (Training the model during the hackathon was a pain in the ..)
+* Deployment soon (in a few weeks hopefully).
 
 ### Description and Future Scope
 ------------------------------------------------------------------------------
